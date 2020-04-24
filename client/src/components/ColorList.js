@@ -20,9 +20,10 @@ const ColorList = ({ colors, updateColors }) => {
   const saveEdit = e => {
     e.preventDefault();
 
-    AxiosAuth().post('api/colors', colorToEdit)
+    AxiosAuth().put(`/api/colors/${colorToEdit.id}`, colorToEdit)
     .then(res =>{
       console.log("Update Color Success: ",res);
+      updateColors()
     })
     .catch(err =>{
       console.log("update Color ERROR: ",err);
@@ -34,6 +35,7 @@ const ColorList = ({ colors, updateColors }) => {
 
   const deleteColor = color => {
     // make a delete request to delete this color
+    AxiosAuth().delete(`/`)
   };
 
   return (
