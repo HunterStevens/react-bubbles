@@ -27,7 +27,7 @@ const Login = () => {
     AxiosAuth().post('/api/login', loginState)
     .then(res =>{console.log("Login Fetch: ",res);
 
-    localStorage.setItem('token', res.data.payload);
+    localStorage.setItem('token', JSON.stringify(res.data.payload));
     history.push('/bubble-page');
     })
     .catch(err => console.log("Login ERROR: ",err))

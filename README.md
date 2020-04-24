@@ -33,10 +33,10 @@ A Token is used for authorization so that users can only access the protected pa
 Wrap your components in PrivateRoutes, have them only accessible through tokens, 
 
 - [ ] Describe how web servers work.
-
+Web Servers are computers that are built to serve data for you webpage. It hosts websites that contain a domain which when a user calls that domain, the server will fetch the data from the network and serve it to the user.
 
 - [ ] Which HTTP methods can be mapped to the CRUD acronym that we use when interfacing with APIs/Servers.
-
+Axios.get(). As that fetches the API data allow the webpage to map it through.
 
 ## Project Set Up
 
