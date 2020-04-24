@@ -30,7 +30,7 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 A Token is used for authorization so that users can only access the protected pages when they have successfuly logged in or recieved some kind of authorization for our page.
 
 - [ ] What steps can you take in your web apps to keep your data secure?
-Wrap your components in PrivateRoutes, have them only accessible through tokens, 
+Wrap your components in PrivateRoutes, have them only accessible through tokens, pass the tokens through LocalStorage when successfuly passed in.
 
 - [ ] Describe how web servers work.
 Web Servers are computers that are built to serve data for you webpage. It hosts websites that contain a domain which when a user calls that domain, the server will fetch the data from the network and serve it to the user.

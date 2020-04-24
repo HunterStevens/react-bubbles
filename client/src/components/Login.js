@@ -1,17 +1,17 @@
 import React, {useState} from "react";
 import AxiosAuth from '../Utils/AxiosAuth';
 import {useParams, useHistory} from 'react-router-dom';
+import axios from 'axios'
 
 
 
 const Login = () => {
   const history = useHistory();
 
-  const initialState = {
-  username:"",
-  password:""
-}
-  const [loginState, setLoginState] = useState(initialState);
+  const [loginState, setLoginState] = useState({
+    username:'',
+    password:''
+  });
 
   const handleChange = ev =>{
     setLoginState({
@@ -24,10 +24,10 @@ const Login = () => {
   const loginSubmit = ev =>{
     ev.preventDefault();
 
-    AxiosAuth().post('/api/login', loginState)
+    axios.post('http://localhost:5000/api/login', loginState)
     .then(res =>{console.log("Login Fetch: ",res);
 
-    localStorage.setItem('token', JSON.stringify(res.data.payload));
+    localStorage.setItem('token', res.data.payload);
     history.push('/bubble-page');
     })
     .catch(err => console.log("Login ERROR: ",err))
