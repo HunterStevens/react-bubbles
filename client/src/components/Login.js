@@ -24,7 +24,13 @@ const Login = () => {
   const loginSubmit = ev =>{
     ev.preventDefault();
 
-    AxiosAuth().post('')
+    AxiosAuth().post('/api/login', loginState)
+    .then(res =>{console.log("Login Fetch: ",res);
+
+    localStorage.setItem('token', res.data.payload);
+    history.push('/bubble-page');
+    })
+    .catch(err => console.log("Login ERROR: ",err))
   }
   
   return (
@@ -43,13 +49,14 @@ const Login = () => {
 
         <label htmlFor="password">
           <input label="password"
-          type="text"
+          type="password"
           name="password"
           value={loginState.password}
           onChange={handleChange}
           placeholder="Password"
           />
         </label>
+        <button>Login</button>
       </form>
     </>
   );
