@@ -30,9 +30,11 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 A Token is used for authorization so that users can only access the protected pages when they have successfuly logged in or recieved some kind of authorization for our page.
 
 - [ ] What steps can you take in your web apps to keep your data secure?
-
+Wrap your components in PrivateRoutes, have them only accessible through tokens, 
 
 - [ ] Describe how web servers work.
+
+
 - [ ] Which HTTP methods can be mapped to the CRUD acronym that we use when interfacing with APIs/Servers.
 
 
